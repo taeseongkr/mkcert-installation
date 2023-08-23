@@ -15,12 +15,14 @@ $ Set-ExecutionPolicy AllSigned
 $ (your-directory) .\window-setup.ps1
 
 ```
-## Update
-Set-ExecutionPolicy Bypass -Scope Process
-
-[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((Invoke-WebRequest -Uri https://chocolatey.org/install.ps1).Content)
-
-choco -v
+## Update for Windows 
+1. Install Choco
+2. Download 2 files rootCA-key.pem and rootA.pem
+3. Create folder named mkcert
+4. Move 2 downloaded files to mkcert
+5. Run command ```$env:CAROOT="C://Users/mkcert" ```
+6. Run ```mkcert -install```
+7. Restart your computer
 # Install certificate on MacOS
 
 1. Download the macos-setup.sh file.
