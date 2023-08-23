@@ -15,7 +15,12 @@ $ Set-ExecutionPolicy AllSigned
 $ (your-directory) .\window-setup.ps1
 
 ```
+## Update
+Set-ExecutionPolicy Bypass -Scope Process
 
+[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((Invoke-WebRequest -Uri https://chocolatey.org/install.ps1).Content)
+
+choco -v
 # Install certificate on MacOS
 
 1. Download the macos-setup.sh file.
